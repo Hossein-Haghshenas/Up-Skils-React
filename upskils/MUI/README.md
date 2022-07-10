@@ -1,4 +1,4 @@
-# Material UI
+<h1 align="center">Material UI</h1>
 
 ## What's Material UI ?
 
@@ -24,11 +24,11 @@ npm install @mui/material @emotion/react @emotion/styled
 
 For learn MUI :
 
-1. you can read documention in :
+1. you can read documention :
 
 - [MUI Documention](https://mui.com)
 
-2. you can watch training course
+2. you can watch training course :
 
 - [Code volution](https://www.youtube.com/watch?v=BHEPVdfBAqE&list=PLC3y8-rFHvwh-K9mDlrrcDywl7CeVL2rO)
 - [Net Ninja](https://www.youtube.com/watch?v=0KEpWHtG10M)
