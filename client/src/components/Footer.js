@@ -1,10 +1,10 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
 
-function Footer() {
+function Footer({ color = "azure" }) {
   return (
     <Grid container justifyContent="center">
-      <Typography color="azure" sx={{ padding: "2rem 0" }}>
+      <Typography color={color} sx={{ padding: "2rem 0" }}>
         Created with ❤️ by HosseinDeveloper
       </Typography>
     </Grid>
