@@ -11,7 +11,7 @@ In React, a reuseable component is a piece of UI that can be used in various par
 Reuseable component is an component we can use on some places and we pass data to that with props.
 <br/> for example its a reuseable btn component :
 
-```
+```JSX
 
 const Button = (props) => {
   const { children = "btn", onClick, color, background , ...rest } = props;
@@ -28,7 +28,7 @@ export default Button;
 
 and we can use that in a lot places like that :
 
-```
+```JSX
 
 <Button onClick={handleClick} color="dark" background="red"> close </Button>
 
@@ -42,13 +42,13 @@ or
 
 ## Tips
 
-question : if we use MUI in our project that have reuseable component. what we most do ? we most use a reuseable component in other reuseable component and finaly use that in our component ?
+`question` : if we use MUI in our project that have reuseable component. what we most do ? we most use a reuseable component in other reuseable component and finaly use that in our component ?
 
-answer : yes because if you do that you can use propType checker and make sure this component work right
+`answer` : yes because if you do that you can use propType checker and make sure this component work right
 
 for example :
 
-```
+```JSX
 import { Button } from "@mui/material";
 import PropTypes from "prop-types";
 
