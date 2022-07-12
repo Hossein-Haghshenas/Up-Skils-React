@@ -4,9 +4,6 @@ import {
   Box,
   Toolbar,
   IconButton,
-  Typography,
-  Menu,
-  MenuItem,
   Container,
   Avatar,
   Button,
@@ -126,31 +123,6 @@ const Header = () => {
                     />
                   </IconButton>
                 </Tooltip>
-                {/* <Menu
-                  sx={{ mt: "45px" }}
-                  id="menu-appbar"
-                  anchorEl={anchorElUser}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={Boolean(anchorElUser)}
-                  onClose={handleCloseUserMenu}
-                >
-                  {settings.map((setting) => (
-                    <MenuItem
-                      key={setting}
-                      onClick={() => handleCloseUserMenu(setting)}
-                    >
-                      <Typography textAlign="center">{setting}</Typography>
-                    </MenuItem>
-                  ))}
-                </Menu> */}
                 <MenuBar
                   items={settings}
                   anchorEl={anchorElUser}
@@ -172,4 +144,5 @@ const Header = () => {
     </ThemeProvider>
   );
 };
+
 export default Header;

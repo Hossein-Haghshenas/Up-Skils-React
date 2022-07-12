@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Typography, Menu, MenuItem } from "@mui/material";
 
 function MenuBar({ items, anchorEl, handleClose }) {
@@ -32,5 +33,11 @@ function MenuBar({ items, anchorEl, handleClose }) {
     </>
   );
 }
+
+MenuBar.propTypes = {
+  items: PropTypes.array,
+  anchorEl: PropTypes.object,
+  handleClose: PropTypes.func,
+};
 
 export default MenuBar;

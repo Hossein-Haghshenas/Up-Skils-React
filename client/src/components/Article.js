@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Grid, Typography } from "@mui/material";
 
 function Article({ text, image, direction }) {
@@ -42,5 +43,11 @@ function Article({ text, image, direction }) {
     </section>
   );
 }
+
+Article.propTypes = {
+  text: PropTypes.string,
+  image: PropTypes.string,
+  direction: PropTypes.string,
+};
 
 export default Article;
