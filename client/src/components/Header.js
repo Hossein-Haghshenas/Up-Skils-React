@@ -6,7 +6,6 @@ import {
   IconButton,
   Container,
   Avatar,
-  Button,
   Tooltip,
   createTheme,
   ThemeProvider,
@@ -15,6 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 import LoginIcon from "@mui/icons-material/Login";
 import MenuBar from "./MenuBar";
+import ButtonCo from "./ButtonCo";
 
 const pages = ["Home", "Music", "About Us"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -102,14 +102,14 @@ const Header = () => {
 
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
-                <Button
+                <ButtonCo
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "flex" }}
                   startIcon={page === "Home" && <HomeIcon />}
                 >
                   {page}
-                </Button>
+                </ButtonCo>
               ))}
             </Box>
 
@@ -130,13 +130,13 @@ const Header = () => {
                 />
               </Box>
             ) : (
-              <Button
+              <ButtonCo
                 onClick={() => setIsLogin(!isLogin)}
                 sx={{ my: 2, color: "white", display: "flex" }}
                 startIcon={<LoginIcon />}
               >
                 Login
-              </Button>
+              </ButtonCo>
             )}
           </Toolbar>
         </Container>
