@@ -3,6 +3,11 @@ import Article from "../components/Article";
 export default {
   title: "HomePage/Article",
   component: Article,
+  argTypes: {
+    direction: { control: "text" },
+    text: { control: "text" },
+    image: { control: "text" },
+  },
 };
 
 const firstArticleText = "Experience The Best Qulaity Music";
@@ -13,24 +18,28 @@ const firstArticleImage = require("../image/decor-1.png");
 const secondArticleImage = require("../image/decor-2.gif");
 const thirdArticleImage = require("../image/decor-3.png");
 
-export const Article1 = () => (
-  <Article
-    direction={"row"}
-    text={firstArticleText}
-    image={firstArticleImage}
-  />
-);
-export const Article2 = () => (
-  <Article
-    direction={"row-reverse"}
-    text={secondArticleText}
-    image={secondArticleImage}
-  />
-);
-export const Article3 = () => (
-  <Article
-    direction={"row"}
-    text={thirdArticleText}
-    image={thirdArticleImage}
-  />
-);
+const Template = (args) => <Article {...args} />;
+
+export const Article1 = Template.bind({});
+
+Article1.args = {
+  direction: "row",
+  text: firstArticleText,
+  image: firstArticleImage,
+};
+
+export const Article2 = Template.bind({});
+
+Article2.args = {
+  direction: "row-reverse",
+  text: secondArticleText,
+  image: secondArticleImage,
+};
+
+export const Article3 = Template.bind({});
+
+Article3.args = {
+  direction: "row",
+  text: thirdArticleText,
+  image: thirdArticleImage,
+};
