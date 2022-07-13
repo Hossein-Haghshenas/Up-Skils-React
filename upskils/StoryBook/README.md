@@ -70,14 +70,14 @@ export default {
 
 export const Variant = () => (
   <>
-    <ButtonCo variant="outlined" sx={{ margin: "1rem" }}>
-      Outlined btn
+    <ButtonCo variant="primary">
+      primary btn
     </ButtonCo>
-    <ButtonCo variant="contained" sx={{ margin: "1rem" }}>
-      contained btn
+    <ButtonCo variant="error">
+      error btn
     </ButtonCo>
-    <ButtonCo variant="text" sx={{ margin: "1rem" }}>
-      Text btn
+    <ButtonCo variant="info">
+      info btn
     </ButtonCo>
   </>
 );
@@ -99,7 +99,7 @@ export default {
 
 if you wanna sort your stories you can use this code in **preview.js** file in the **.storybook** folder :
 
-```JSX
+```javascript
 export const parameters = {
   options: {
     storySort: (a, b) =>
@@ -107,5 +107,63 @@ export const parameters = {
         ? 0
         : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
   },
+};
+```
+
+### `Use story with in story`
+
+if you wanna use one or two story in other story you can write your code like this :
+
+```JSX
+import React from "react";
+import {ButtonCo} from "../ButtonCo/ButtonCo.stories";
+import {InputCo} from "../InputCo/InputCo.stories";
+
+export default {
+  title: "form/Subscription",
+};
+
+export const Subscription = () => (
+  <>
+    <ButtonCo/>
+    <InputCo/>
+  </>
+);
+```
+
+### `Create story with args`
+
+if you wanna create an story with args you can write code like this :
+
+```JSX
+import React from "react";
+import ButtonCo from "../components/ButtonCo";
+
+export default {
+  title: "Button",
+  component: ButtonCo,
+};
+
+const Template = args => <ButtonCo {...args}/>
+
+export const Primary = Template.bind({})
+
+Primary.args = {
+  variant: 'primary',
+  children: 'primary btn'
+}
+```
+
+#### `notice : public args`
+
+you can write public args like this code :
+
+```JSX
+export default {
+  title: "Button",
+  component: ButtonCo,
+  args: {
+    variant : 'primary'
+  }
 };
 ```
