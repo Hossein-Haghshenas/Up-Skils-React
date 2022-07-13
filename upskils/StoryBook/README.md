@@ -167,3 +167,139 @@ export default {
   }
 };
 ```
+
+### `Decorators in storybook`
+
+for create decorators at first we most create a component like this and make some style for that :
+
+```JSX
+
+export default const Center = ({children}) => (<section className='text-center'>{children}</section>)
+
+```
+
+then we have 3 ways to use that :
+
+1. `private`
+
+```javascript
+import React from "react";
+import ButtonCo from "../components/ButtonCo";
+import Center from "../components/Center";
+
+export default {
+  title: "Button",
+  component: ButtonCo,
+};
+
+export const info = () => (
+  <Center>
+    <ButtonCo variant="info">info btn </ButtonCo>
+  </Center>
+);
+```
+
+2. `public`
+
+```javascript
+import Center from "../components/Center";
+export default {
+  title: "Button",
+  component: ButtonCo,
+  decorators: [(story) => <Center> {story()} </Center>],
+};
+```
+
+3. `global` (in the preview.js)
+
+```javascript
+import { addDecorator } from "@storybook/react";
+import Center from "../components/Center";
+
+addDecorator((story) => <Center> {story()} </Center>);
+```
+
+### `storybook addons`
+
+1. `Control`
+
+```JSX
+
+export default {
+  title: "Button",
+  component: ButtonCo,
+  argTypes: {
+    variant: {control : 'text'},
+    children: {control : 'text'}
+  }
+};
+
+const Template = args => <ButtonCo {...args}/>
+
+export const Primary = Template.bind({})
+
+Primary.args = {
+  variant: 'primary',
+  children: 'primary btn'
+}
+```
+
+2. `Action`
+
+```JSX
+
+export default {
+  title: "Button",
+  component: ButtonCo,
+  argTypes: {
+    onClick: {action : 'clicked'},
+  }
+};
+
+const Template = args => <ButtonCo {...args}/>
+
+export const Primary = Template.bind({})
+
+Primary.args = {
+  variant: 'primary',
+  children: 'primary btn'
+}
+```
+
+3. `ViewPort`
+
+we most add this code to the main.js
+
+```JSX
+module.exports = {
+"addons": [
+  "@storybook/addon-viewport"
+]
+}
+```
+
+### `add env variable for storybook`
+
+for create a env variable go to the package.json file and in scripts object add this code at first of this line :
+
+```javascript
+"scripts":{
+  "storybook":"set STORYBOOK_THEME=dark && start-storybook -p 9009 -s public"
+}
+```
+
+and for use that just use this code :
+
+```javascript
+process.env.STORYBOOK_THEME;
+```
+
+### `build storybook`
+
+for build storybook just run this code in terminal :
+
+```
+yarn build-storybook
+or
+npm build-storybook
+```
