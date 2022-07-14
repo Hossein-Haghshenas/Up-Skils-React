@@ -1,14 +1,15 @@
 import Header from "./components/Header";
-import HomePage from "./components/HomePage";
+import HomePage from "./pages/HomePage";
 import Footer from "./components/Footer";
+import { pages, settings } from "./docs/header.menu.items";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <Header />
+      <Header pages={pages} settings={settings} />
       <HomePage />
-      <Footer />
+      <Footer text="Made with ❤️ by HosseinDeveloper" />
     </>
   );
 }

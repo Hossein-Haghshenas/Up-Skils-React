@@ -1,13 +1,13 @@
 import React from "react";
-import Article from "./Article";
+import Article from "../components/Article";
 
 const firstArticleText = "Experience The Best Qulaity Music";
 const secondArticleText = "Search Music by Name or Direct URL";
 const thirdArticleText = "Enjoy listening to them";
 
-const firstArticleImage = require("../image/decor-1.png");
-const secondArticleImage = require("../image/decor-2.gif");
-const thirdArticleImage = require("../image/decor-3.png");
+const firstArticleImage = require("../assets/image/decor-1.png");
+const secondArticleImage = require("../assets/image/decor-2.gif");
+const thirdArticleImage = require("../assets/image/decor-3.png");
 
 function HomePage() {
   return (
