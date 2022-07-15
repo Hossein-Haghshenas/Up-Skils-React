@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, Typography } from "@mui/material";
+import Text from "./Text";
+import ContainerCo from "./ContainerCo";
 
 function Article({ text, image, direction }) {
   return (
     <section className="article">
-      <Grid
+      <ContainerCo
         container
         direction={direction}
         justifyContent="space-around"
@@ -14,7 +15,7 @@ function Article({ text, image, direction }) {
         columns={{ xs: 1, sm: 8, md: 12 }}
         sx={{ height: "100%", textAlign: { xs: "center", sm: "start" } }}
       >
-        <Grid
+        <ContainerCo
           item
           xs={1}
           sm={5}
@@ -22,24 +23,24 @@ function Article({ text, image, direction }) {
           sx={{ display: "flex", justifyContent: "center" }}
         >
           <img width="70%" src={image} alt="" />
-        </Grid>
+        </ContainerCo>
 
-        <Grid
+        <ContainerCo
           item
           xs={1}
           sm={3}
           md={4}
           sx={{ display: "flex", justifyContent: "center" }}
         >
-          <Typography
+          <Text
             variant="h3"
             color={"azure"}
             sx={{ fontSize: { xs: "1.6rem", sm: "2.4rem", md: "3.5rem" } }}
           >
             {text}
-          </Typography>
-        </Grid>
-      </Grid>
+          </Text>
+        </ContainerCo>
+      </ContainerCo>
     </section>
   );
 }

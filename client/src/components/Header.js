@@ -16,10 +16,7 @@ import LoginIcon from "@mui/icons-material/Login";
 import MenuBar from "./MenuBar";
 import ButtonCo from "./ButtonCo";
 
-const pages = ["Home", "Music", "About Us"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
-const Header = () => {
+const Header = ({ pages, settings }) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const [isLogin, setIsLogin] = useState(false);
@@ -63,7 +60,7 @@ const Header = () => {
             >
               <img
                 className="header-logo"
-                src={require("../image/logo.png")}
+                src={require("../assets/image/logo.png")}
                 alt=""
               />
             </Box>
@@ -95,7 +92,7 @@ const Header = () => {
             >
               <img
                 className="header-logo"
-                src={require("../image/logo.png")}
+                src={require("../assets/image/logo.png")}
                 alt=""
               />
             </Box>
@@ -119,7 +116,7 @@ const Header = () => {
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                     <Avatar
                       alt="Profile"
-                      src={require("../image/profile.jpg")}
+                      src={require("../assets/image/profile.jpg")}
                     />
                   </IconButton>
                 </Tooltip>

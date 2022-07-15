@@ -1,14 +1,22 @@
 import React from "react";
-import { Grid, Typography } from "@mui/material";
+import PropTypes from "prop-types";
+import ContainerCo from "./ContainerCo";
+import Text from "./Text";
 
-function Footer({ color = "azure" }) {
+function Footer(props) {
+  const { text = "footer", color = "azure" } = props;
   return (
-    <Grid container justifyContent="center">
-      <Typography color={color} sx={{ padding: "2rem 0" }}>
-        Created with ❤️ by HosseinDeveloper
-      </Typography>
-    </Grid>
+    <ContainerCo container justifyContent="center">
+      <Text color={color} sx={{ padding: "2rem 0" }}>
+        {text}
+      </Text>
+    </ContainerCo>
   );
 }
+
+Footer.propTypes = {
+  text: PropTypes.string,
+  color: PropTypes.string,
+};
 
 export default Footer;

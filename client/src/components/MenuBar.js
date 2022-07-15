@@ -1,7 +1,11 @@
 import PropTypes from "prop-types";
-import { Typography, Menu, MenuItem } from "@mui/material";
+import { Menu, MenuItem } from "@mui/material";
+import Text from "./Text";
 
-function MenuBar({ items, anchorEl, handleClose }) {
+const defaultItems = ["item", "item", "item"];
+
+function MenuBar(props) {
+  const { items = defaultItems, anchorEl = null, handleClose = true } = props;
   return (
     <>
       <Menu
@@ -26,7 +30,7 @@ function MenuBar({ items, anchorEl, handleClose }) {
       >
         {items.map((item) => (
           <MenuItem key={item} onClick={() => handleClose(item)}>
-            <Typography textAlign="center">{item}</Typography>
+            <Text textAlign="center">{item}</Text>
           </MenuItem>
         ))}
       </Menu>
