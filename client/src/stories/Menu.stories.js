@@ -1,14 +1,9 @@
 import MenuBar from "../components/MenuBar";
+import { pages } from "../docs/header.menu.items";
 
 export default {
   title: "Header/MenuBar",
   component: MenuBar,
 };
 
-const pages = ["Home", "Music", "About Us"];
-
-export const Menu = () => (
-  <>
-    <MenuBar items={pages}>Outlined btn</MenuBar>
-  </>
-);
+export const Menu = () => <MenuBar items={pages} />;
