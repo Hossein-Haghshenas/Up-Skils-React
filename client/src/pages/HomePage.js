@@ -11,7 +11,7 @@ const thirdArticleImage = require("../assets/image/decor-3.png");
 
 function HomePage() {
   return (
-    <section className="home-page">
+    <section data-testid="homepage" className="home-page">
       <Article
         direction={"row"}
         text={firstArticleText}

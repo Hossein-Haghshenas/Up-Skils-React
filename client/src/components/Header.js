@@ -7,7 +7,6 @@ import {
   Container,
   Avatar,
   Tooltip,
-  createTheme,
   ThemeProvider,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -15,6 +14,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import LoginIcon from "@mui/icons-material/Login";
 import MenuBar from "./MenuBar";
 import ButtonCo from "./ButtonCo";
+import darkTheme from "../theme/DarkMod";
 
 const Header = ({ pages, settings }) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -37,18 +37,9 @@ const Header = ({ pages, settings }) => {
     setAnchorElUser(null);
   };
 
-  const darkTheme = createTheme({
-    palette: {
-      mode: "dark",
-      primary: {
-        main: "#1976d2",
-      },
-    },
-  });
-
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar position="sticky">
+      <AppBar data-testid="header" position="sticky">
         <Container maxWidth="lg">
           <Toolbar disableGutters>
             <Box
