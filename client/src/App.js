@@ -9,7 +9,8 @@ function App() {
     <>
       <Header pages={pages} settings={settings} />
       <HomePage />
-      <Footer text="Made with ❤️ by HosseinDeveloper" />
+      <Footer data-testid="footer" text="Made with ❤️ by HosseinDeveloper" />
+      <a href="#">learn react</a>
     </>
   );
 }
