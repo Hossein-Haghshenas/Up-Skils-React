@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import { pages, settings } from "../docs/header.menu.items";
+import { pages, settings } from "../constants/header.menu.items";
 
 export default {
   title: "Header/header",

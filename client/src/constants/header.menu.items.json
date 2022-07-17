@@ -1,0 +1,4 @@
+{
+  "pages": ["Home", "Music", "About Us"],
+  "settings": ["Profile", "Account", "Dashboard", "Logout"]
+}
