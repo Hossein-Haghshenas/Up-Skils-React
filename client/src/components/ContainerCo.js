@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { Grid } from "@mui/material";
 
 function ContainerCo(props) {
-  const { children, item, xs, sm, md, sx, ...rest } = props;
+  const { children, item, xs, sm, md, sx, bgcolor, ...rest } = props;
   return (
-    <Grid item xs={xs} sm={sm} md={md} sx={sx} {...rest}>
+    <Grid bgcolor={bgcolor} item xs={xs} sm={sm} md={md} sx={sx} {...rest}>
       {children}
     </Grid>
   );
