@@ -87,16 +87,12 @@ jest.config.js;
 _______________
 
 module.exports = {
-  presets: [
-    "@babel/preset-env",
-    ["@babel/preset-react", { runtime: "automatic" }],
-  ],
   setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
 };
 ```
 
 ```
-setupTests.ts;
+setupTests.js;
 _______________
 
 import "@testing-library/jest-dom";
@@ -115,6 +111,18 @@ yarn test
 or
 jest
 ```
+
+---
+
+### `types of tests`
+
+We have different type of tests, and here I will introduce the most common ones :
+
+`Unit Tests` : Unit testing is a testing method that tests an individual software unit in isolation. This involves verifying the output of a function or component for a given input. For React components, this could mean checking that the component renders correctly for the specified props.
+
+`Integration Tests` : By definition, integration tests test the interactions between the various components of an application. For a React application, this means testing. interactions between React components, typically performed via calling prop functions such as <Component onClick={onClickHandler}> manipulation of component state.
+
+`End to End Tests` : End-to-end tests (E2E) simulate actual user actions and are designed to test how a real user would likely use the application. React E2E testing helps ensure that the code you wrote is functional and your app works as intended. It's a way of catching bugs in your code before you go live with your React app.
 
 ---
 
