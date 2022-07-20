@@ -24,7 +24,7 @@ test("render logo in the xs size", () => {
   expect(logo).toBeInTheDocument();
 });
 
-/* test("render menu items", () => {
+test("render menu items", () => {
   render(
     <Header
       pages={headerMenuOptions.pages}
@@ -32,5 +32,6 @@ test("render logo in the xs size", () => {
     />
   );
   const menuItems = screen.queryAllByRole("button");
-  expect(menuItems).toBeInTheDocument();
-}); */
+  menuItems.map((item) => expect(item).toBeInTheDocument());
+  menuItems.map((item) => expect(item).toBeEnabled());
+});
