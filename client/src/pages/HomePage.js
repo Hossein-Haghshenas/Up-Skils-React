@@ -7,7 +7,7 @@ import articleTexts from "../constants/HomePageArticleTexts.json";
 
 function HomePage() {
   return (
-    <section data-testid="homepage" className="home-page">
+    <section title="home-page" className="home-page">
       <Article direction={"row"} text={articleTexts.firstText} image={decor1} />
       <Article
         direction={"row-reverse"}
