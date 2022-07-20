@@ -52,7 +52,7 @@ const Header = ({ pages, settings }) => {
               <img
                 className="header-logo"
                 src={require("../assets/image/logo.png")}
-                alt=""
+                alt="logo"
               />
             </Box>
 
@@ -84,7 +84,7 @@ const Header = ({ pages, settings }) => {
               <img
                 className="header-logo"
                 src={require("../assets/image/logo.png")}
-                alt=""
+                alt="logo-xs"
               />
             </Box>
 
